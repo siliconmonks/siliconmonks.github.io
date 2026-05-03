@@ -154,12 +154,12 @@ async function loadDevToBlogs() {
       { cache: 'no-store' }
     );
 
-
     if (!response.ok) {
       throw new Error('Unable to load Dev.to posts');
     }
 
     devToArticles = await response.json();
+    console.log(devToArticles)
     renderBlogResults('all');
   } catch (error) {
     blogResults.innerHTML = '<p class="blog-empty">Could not load Dev.to posts right now.</p>';
