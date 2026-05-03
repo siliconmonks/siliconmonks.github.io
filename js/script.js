@@ -149,7 +149,11 @@ async function loadDevToBlogs() {
   }
 
   try {
-    const response = await fetch('https://dev.to/api/articles?username=silicon_monks&per_page=100');
+    const response = await fetch(
+      `https://dev.to/api/articles?username=silicon_monks&per_page=100&_=${Date.now()}`,
+      { cache: 'no-store' }
+    );
+
 
     if (!response.ok) {
       throw new Error('Unable to load Dev.to posts');
