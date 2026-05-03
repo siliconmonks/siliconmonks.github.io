@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silicon Monks</title>
+
+  <link rel="icon" type="image/png" href="images/silicon-monks-img.png?v=3">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="loader" id="loader" aria-label="Loading">
+  <div class="loader-terminal">
+    <span class="loader-prompt">siliconmonks@root:~$</span>
+    <span id="loader-text"></span><span class="loader-cursor">_</span>
+  </div>
+</div>
+
+<header class="nav">
+  <!--<div class="logo">siliconmonks@root:~$</div>-->
+
+  <div class="nav-actions">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <span class="theme-icon sun-icon">&#9728;</span>
+      <span class="theme-icon moon-icon">&#9790;</span>
+      <span class="toggle-thumb"></span>
+    </button>
+    <!-- Only one menu button is kept -->
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+
+<nav class="menu" id="menu">
+  <button class="close-btn" onclick="toggleMenu()" aria-label="Close menu">×</button>
+
+  <a href="about.html">~/about</a>
+  <a href="projects.html">~/projects</a>
+  <a href="blogs.html">~/blogs</a>
+  <a href="contact.html">~/contact</a>
+</nav>
+
+<main class="home-content">
+  <section class="hero-copy">
+    <h1>Welcome to Silicon Monks</h1>
+
+    <p>
+      This space is built for curious minds drawn to the world of VLSI and semiconductor design. Whether you are just starting out or already working with chip architecture, verification, or physical design, you will find ideas here that aim to deepen your understanding without the noise.
+    </p>
+
+    <p>
+      Silicon Monks focuses on the fundamentals and the evolving landscape of integrated circuits. From transistor-level concepts to system-on-chip design, from RTL to layout, the goal is to explore how modern hardware is built and why it works the way it does.
+    </p>
+
+    <p>
+      This is not about rushing through trends. It is about slowing down, thinking clearly, and building strong intuition in a field where precision matters.
+    </p>
+
+    <p>
+      Take your time. Explore. Learn with intent.
+    </p>
+  </section>
+
+  <section class="hero-logo" aria-label="Silicon Monks logo">
+    <div class="flag-pole"></div>
+
+    <div class="flag-wrap">
+      <img src="images/silicon-monks-img.png" alt="Silicon Monks logo" class="waving-logo">
+    </div>
+  </section>
+</main>
+
+
+<footer class="site-footer">
+  <div class="social-links">
+    <a href="https://www.linkedin.com/company/silicon-monks/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://www.instagram.com/siliconmonks/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=61589232958247" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://dev.to/silicon_monks" target="_blank" rel="noopener noreferrer" aria-label="Dev.to">
+      <i class="fa-brands fa-dev"></i>
+    </a>
+
+    <a href="https://x.com/siliconmonks" target="_blank" rel="noopener noreferrer" aria-label="X">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+
+    <a href="https://www.youtube.com/@siliconmonks" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

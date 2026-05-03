@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogs | Silicon Monks</title>
+
+  <link rel="icon" type="image/png" href="images/silicon-monks-img.png?v=3">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-actions">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <span class="theme-icon sun-icon">&#9728;</span>
+      <span class="theme-icon moon-icon">&#9790;</span>
+      <span class="toggle-thumb"></span>
+    </button>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">&#9776;</button>
+  </div>
+</header>
+
+<nav class="menu" id="menu">
+  <button class="close-btn" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
+
+  <a href="index.html">~/home</a>
+  <a href="about.html">~/about</a>
+  <a href="projects.html">~/projects</a>
+  <a href="contact.html">~/contact</a>
+</nav>
+
+<main class="blogs-page">
+  <section class="blogs-hero">
+    <p class="section-kicker">~/blogs</p>
+    <h1>Blogs</h1>
+
+    <p>
+      Posts are loaded directly from the Silicon Monks Dev.to page. Choose a topic to filter the list.
+    </p>
+
+    <a class="devto-link" href="https://dev.to/silicon_monks" target="_blank" rel="noopener noreferrer">
+      View all on Dev.to
+      <i class="fa-brands fa-dev"></i>
+    </a>
+  </section>
+
+  <section class="blog-filters" id="blog-filters" aria-label="Blog topic filters">
+    <button class="active" data-category="all">All</button>
+    <button data-category="tcl">TCL</button>
+    <button data-category="perl">Perl</button>
+    <button data-category="python">Python</button>
+    <button data-category="linux">Linux</button>
+    <button data-category="shell">Shell</button>
+    <button data-category="verilog">Verilog</button>
+    <button data-category="systemverilog">System Verilog</button>
+    <button data-category="digitalelectronics">Digital Electronics</button>
+    <button data-category="synthesis">Synthesis</button>
+    <button data-category="cdc">CDC</button>
+    <button data-category="integration">Integration</button>
+    <button data-category="lint">Lint</button>
+    <button data-category="lec">LEC</button>
+  </section>
+
+  <section class="blog-results" id="blog-results">
+    <p class="blog-empty">Loading posts from Dev.to...</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="social-links">
+    <a href="https://www.linkedin.com/company/silicon-monks/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://www.instagram.com/siliconmonks/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61589232958247" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://dev.to/silicon_monks" target="_blank" rel="noopener noreferrer" aria-label="Dev.to"><i class="fa-brands fa-dev"></i></a>
+    <a href="https://x.com/siliconmonks" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="https://www.youtube.com/@siliconmonks" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

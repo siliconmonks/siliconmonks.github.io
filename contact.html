@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Silicon Monks</title>
+
+  <link rel="icon" type="image/png" href="images/silicon-monks-img.png?v=3">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!--
+<div class="loader" id="loader" aria-label="Loading">
+  <div class="loader-terminal">
+    <span class="loader-prompt">siliconmonks@root:~$</span>
+    <span id="loader-text"></span><span class="loader-cursor">_</span>
+  </div>
+</div>
+-->
+
+<header class="nav">
+  <div class="nav-actions">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <span class="theme-icon sun-icon">&#9728;</span>
+      <span class="theme-icon moon-icon">&#9790;</span>
+      <span class="toggle-thumb"></span>
+    </button>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">&#9776;</button>
+  </div>
+</header>
+
+<nav class="menu" id="menu">
+  <button class="close-btn" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
+
+  <a href="index.html">~/home</a>
+  <a href="about.html">~/about</a>
+  <a href="projects.html">~/projects</a>
+  <a href="blogs.html">~/blogs</a>
+</nav>
+
+<main class="contact-page">
+  <section class="contact-panel">
+    <div class="contact-form-area">
+      <p class="section-kicker">~/contact</p>
+      <h1>Contact us</h1>
+      <form class="contact-form" action="https://formspree.io/f/xdabadze" method="POST">
+        <input type="hidden" name="_subject" value="New message from Silicon Monks blog">
+        <label for="name">Your Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required>
+        
+        <label for="email">Your Email Address</label>
+        <input id="email" name="email" type="email" placeholder="name@example.com" required>
+        
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell us what you want to discuss" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <aside class="contact-info">
+      <img src="images/silicon-monks-img.png" alt="Silicon Monks logo" class="contact-logo">
+
+      <div>
+        <h2>Silicon Monks</h2>
+        <p>VLSI, semiconductor design, verification, RTL, layout, and hardware intuition.</p>
+      </div>
+
+      <div class="contact-lines">
+        <a href="https://www.linkedin.com/company/silicon-monks/" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-linkedin-in"></i>
+          LinkedIn
+        </a>
+
+        <a href="https://www.instagram.com/siliconmonks/" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-instagram"></i>
+          Instagram
+        </a>
+
+        <a href="https://x.com/siliconmonks" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-x-twitter"></i>
+          X
+        </a>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="social-links">
+    <a href="https://www.linkedin.com/company/silicon-monks/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://www.instagram.com/siliconmonks/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=61589232958247" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://dev.to/silicon_monks" target="_blank" rel="noopener noreferrer" aria-label="Dev.to">
+      <i class="fa-brands fa-dev"></i>
+    </a>
+
+    <a href="https://x.com/siliconmonks" target="_blank" rel="noopener noreferrer" aria-label="X">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+
+    <a href="https://www.youtube.com/@siliconmonks" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
