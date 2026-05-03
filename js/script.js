@@ -150,7 +150,7 @@ async function loadDevToBlogs() {
 
   try {
     const response = await fetch(
-      `https://dev.to/api/articles?username=silicon_monks&per_page=100&_=${Date.now()}`,
+      `https://dev.to/api/articles?username=silicon_monks`,
       { cache: 'no-store' }
     );
 
