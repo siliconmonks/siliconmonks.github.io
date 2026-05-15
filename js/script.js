@@ -16,7 +16,7 @@ function addFooterMessage() {
 
   const credit = document.createElement('p');
   credit.className = 'footer-credit';
-  credit.textContent = '© 2026 Silicon Monks. All rights reserved.';
+  credit.textContent = String.fromCharCode(169) + ' 2026 Silicon Monks. All rights reserved.';
   credit.style.margin = '18px 0 0';
   credit.style.textAlign = 'center';
   credit.style.color = 'var(--muted)';
@@ -27,20 +27,6 @@ function addFooterMessage() {
 
 function toggleMenu() {
   document.getElementById('menu').classList.toggle('active');
-}
-
-function toggleTheme() {
-  document.body.classList.toggle('dark');
-
-  if (document.body.classList.contains('dark')) {
-    localStorage.setItem('theme', 'dark');
-  } else {
-    localStorage.setItem('theme', 'light');
-  }
-}
-
-if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark');
 }
 
 function runLoader() {
@@ -150,7 +136,7 @@ async function loadDevToBlogs() {
 
   try {
     const response = await fetch(
-      `https://dev.to/api/articles?username=silicon_monks`,
+      'https://dev.to/api/articles?username=silicon_monks',
       { cache: 'no-store' }
     );
 
@@ -159,7 +145,6 @@ async function loadDevToBlogs() {
     }
 
     devToArticles = await response.json();
-    console.log(devToArticles)
     renderBlogResults('all');
   } catch (error) {
     blogResults.innerHTML = '<p class="blog-empty">Could not load Dev.to posts right now.</p>';

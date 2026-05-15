@@ -1,21 +1,4 @@
 :root {
-  --bg: #ffffff;
-  --text: #07110f;
-  --muted: #4b635d;
-  --menu-bg: #f7faf8;
-  --border: #0f473d;
-
-  --primary: #0f473d;
-  --secondary: #11a85a;
-  --accent: #f4b72a;
-
-  --toggle-border: #0f473d;
-  --toggle-bg: #ffffff;
-  --toggle-thumb: #0f473d;
-  --toggle-icon: #0f473d;
-}
-
-body.dark {
   --bg: #07110f;
   --text: #f7faf8;
   --muted: #a8b8b2;
@@ -25,11 +8,6 @@ body.dark {
   --primary: #11a85a;
   --secondary: #f4b72a;
   --accent: #f4b72a;
-
-  --toggle-border: #f4b72a;
-  --toggle-bg: #07110f;
-  --toggle-thumb: #f4b72a;
-  --toggle-icon: #f4b72a;
 }
 
 body {
@@ -104,8 +82,7 @@ body {
 }
 
 .menu-btn,
-.close-btn,
-.theme-toggle {
+.close-btn {
   cursor: pointer;
   background: none;
   border: 0;
@@ -116,62 +93,6 @@ body {
 .menu-btn {
   font-size: 28px;
   line-height: 1;
-}
-
-/* Theme Toggle */
-.theme-toggle {
-  position: relative;
-  width: 62px;
-  height: 30px;
-  padding: 3px;
-  border: 2px solid var(--toggle-border);
-  border-radius: 999px;
-  background: var(--toggle-bg);
-  transition: background 0.3s ease, border-color 0.3s ease;
-}
-
-.theme-icon {
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  font-size: 13px;
-  line-height: 1;
-  color: var(--toggle-icon);
-  transform: translateY(-50%);
-  transition: opacity 0.3s ease, color 0.3s ease;
-}
-
-.sun-icon {
-  left: 9px;
-}
-
-.moon-icon {
-  right: 9px;
-  opacity: 0.35;
-}
-
-.toggle-thumb {
-  position: relative;
-  z-index: 2;
-  display: block;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--toggle-thumb);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-body.dark .toggle-thumb {
-  transform: translateX(32px);
-}
-
-body.dark .sun-icon {
-  opacity: 0.35;
-}
-
-body.dark .moon-icon {
-  opacity: 1;
 }
 
 /* Menu */
@@ -622,79 +543,11 @@ main {
   transform: translateY(-3px);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .home-content {
-    grid-template-columns: 1fr;
-    padding-top: 34px;
-  }
-
-  .hero-copy h1 {
-    font-size: 40px;
-  }
-
-  .hero-copy p {
-    font-size: 18px;
-  }
-
-  .hero-logo {
-    min-height: 320px;
-  }
-
-  .flag-pole {
-    height: 290px;
-  }
-}
-
-@media (max-width: 820px) {
-  .contact-page {
-    padding: 28px 20px 52px;
-  }
-
-  .contact-panel {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 32px 24px;
-  }
-
-  .contact-form-area h1 {
-    font-size: 40px;
-  }
-
-  .contact-form button {
-    width: 100%;
-  }
-
-  .blogs-page {
-    padding: 28px 20px 52px;
-  }
-
-  .blogs-hero h1 {
-    font-size: 40px;
-  }
-
-  .blogs-hero p {
-    font-size: 18px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .flag-wrap,
-  .flag-wrap::after,
-  .waving-logo {
-    animation: none;
-  }
-}
-
-/* ========================= */
-/* TRAINING PAGE STYLES */
-/* ========================= */
-
+/* Training */
 .training-page {
   padding: 40px 30px 70px;
 }
 
-/* HERO */
 .training-hero {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -714,7 +567,6 @@ main {
   line-height: 1.7;
 }
 
-/* CTA buttons */
 .training-actions {
   margin-top: 30px;
   display: flex;
@@ -752,17 +604,28 @@ main {
   color: var(--accent);
 }
 
-/* HERO SIDE PANEL */
 .training-highlights {
   border: 1px solid var(--border);
-  padding: 24px;
+  padding: 18px;
   background: var(--menu-bg);
   display: grid;
-  gap: 12px;
-  font-size: 16px;
+  gap: 10px;
+  align-self: center;
+  justify-self: end;
+  width: min(420px, 100%);
 }
 
-/* SECTIONS */
+.training-highlights p {
+  margin: 0;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.45;
+}
+
 .training-section {
   margin-bottom: 60px;
 }
@@ -772,19 +635,22 @@ main {
   margin-bottom: 20px;
 }
 
+.training-section p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 .section-intro {
   color: var(--muted);
   margin-bottom: 30px;
 }
 
-/* SPLIT SECTION */
 .split-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
 }
 
-/* GRID FEATURES */
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -797,7 +663,6 @@ main {
   background: var(--menu-bg);
 }
 
-/* COURSES */
 .course-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -821,7 +686,6 @@ main {
   margin-bottom: 10px;
 }
 
-/* AUDIENCE STRIP */
 .audience-strip {
   display: flex;
   flex-wrap: wrap;
@@ -835,7 +699,6 @@ main {
   border-radius: 999px;
 }
 
-/* LISTS */
 .clean-list {
   padding-left: 18px;
   display: grid;
@@ -846,7 +709,6 @@ main {
   font-size: 18px;
 }
 
-/* OUTCOME + TRUST */
 .outcome-section,
 .trust-section {
   background: var(--menu-bg);
@@ -854,7 +716,6 @@ main {
   border: 1px solid var(--border);
 }
 
-/* FINAL CTA */
 .final-cta {
   text-align: center;
   padding: 60px 20px;
@@ -871,17 +732,28 @@ main {
   margin-bottom: 24px;
 }
 
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
-
+/* Responsive */
 @media (max-width: 900px) {
-  .training-hero {
+  .home-content,
+  .training-hero,
+  .split-section {
     grid-template-columns: 1fr;
   }
 
-  .split-section {
-    grid-template-columns: 1fr;
+  .hero-copy h1 {
+    font-size: 40px;
+  }
+
+  .hero-copy p {
+    font-size: 18px;
+  }
+
+  .hero-logo {
+    min-height: 320px;
+  }
+
+  .flag-pole {
+    height: 290px;
   }
 
   .training-hero-copy h1 {
@@ -890,5 +762,54 @@ main {
 
   .training-section h2 {
     font-size: 32px;
+  }
+
+  .training-highlights {
+    justify-self: stretch;
+    width: auto;
+  }
+}
+
+@media (max-width: 820px) {
+  .contact-page {
+    padding: 28px 20px 52px;
+  }
+
+  .contact-panel {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 32px 24px;
+  }
+
+  .contact-form-area h1 {
+    font-size: 40px;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+
+  .blogs-page {
+    padding: 28px 20px 52px;
+  }
+
+  .blogs-hero h1 {
+    font-size: 40px;
+  }
+
+  .blogs-hero p {
+    font-size: 18px;
+  }
+
+  .training-page {
+    padding: 28px 20px 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flag-wrap,
+  .flag-wrap::after,
+  .waving-logo {
+    animation: none;
   }
 }
