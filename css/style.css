@@ -167,6 +167,286 @@ main {
 }
 
 /* Waving Logo */
+/* ========================================
+   REALISTIC WAVING LOGO
+======================================== */
+
+.hero-logo {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 420px;
+
+  perspective: 1200px;
+}
+
+
+/* ========================================
+   FLAG POLE
+======================================== */
+
+.flag-pole {
+  position: relative;
+
+  width: 5px;
+  height: 380px;
+
+  flex-shrink: 0;
+
+  border-radius: 999px;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 10px rgba(244, 183, 42, 0.5),
+    0 0 24px rgba(244, 183, 42, 0.3);
+
+  z-index: 5;
+}
+
+
+/* ========================================
+   FLAG
+======================================== */
+
+.flag-wrap {
+  position: relative;
+
+  width: min(360px, 72vw);
+
+  /*
+    Almost touching the pole
+  */
+  margin-left: 3px;
+
+  transform-origin: left center;
+
+  /*
+    Very subtle overall movement.
+    The SVG filter handles the actual
+    fabric distortion.
+  */
+  animation:
+    flagNaturalMotion 5s ease-in-out infinite;
+
+  filter:
+    drop-shadow(
+      0 24px 30px
+      rgba(0, 0, 0, 0.25)
+    );
+
+  will-change: transform;
+}
+
+
+/* ========================================
+   LOGO IMAGE
+======================================== */
+
+.waving-logo {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: 1;
+
+  object-fit: cover;
+
+  border-radius: 16px;
+
+  /*
+    Actual cloth distortion
+  */
+  filter:
+    url("#flagWave");
+
+  transform-origin:
+    left center;
+}
+
+
+/* ========================================
+   FABRIC LIGHT AND SHADOW
+
+   This creates the illusion of folds
+   moving horizontally across the flag.
+======================================== */
+
+.flag-wrap::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 16px;
+
+  background:
+
+    linear-gradient(
+      100deg,
+
+      transparent 0%,
+
+      rgba(255, 255, 255, 0.04) 12%,
+
+      rgba(255, 255, 255, 0.18) 25%,
+
+      transparent 38%,
+
+      rgba(0, 0, 0, 0.12) 50%,
+
+      transparent 62%,
+
+      rgba(255, 255, 255, 0.13) 76%,
+
+      transparent 90%
+    );
+
+  background-size:
+    220% 100%;
+
+  pointer-events: none;
+
+  mix-blend-mode:
+    soft-light;
+
+  animation:
+    fabricLight 5s linear infinite;
+}
+
+
+/* ========================================
+   SUBTLE NATURAL MOTION
+
+   Important:
+   We do NOT swing from -8deg to +8deg.
+
+   The pole side should look anchored.
+======================================== */
+
+@keyframes flagNaturalMotion {
+
+  0%,
+  100% {
+
+    transform:
+      perspective(1200px)
+      rotateY(-1deg)
+      rotateZ(0deg);
+
+  }
+
+
+  25% {
+
+    transform:
+      perspective(1200px)
+      rotateY(1deg)
+      rotateZ(0.15deg);
+
+  }
+
+
+  50% {
+
+    transform:
+      perspective(1200px)
+      rotateY(2deg)
+      rotateZ(-0.1deg);
+
+  }
+
+
+  75% {
+
+    transform:
+      perspective(1200px)
+      rotateY(0deg)
+      rotateZ(0.1deg);
+
+  }
+
+}
+
+
+/* ========================================
+   LIGHT TRAVELS FROM POLE → FREE EDGE
+======================================== */
+
+@keyframes fabricLight {
+
+  0% {
+
+    background-position:
+      100% center;
+
+    opacity: 0.4;
+
+  }
+
+
+  50% {
+
+    background-position:
+      0% center;
+
+    opacity: 0.65;
+
+  }
+
+
+  100% {
+
+    background-position:
+      -100% center;
+
+    opacity: 0.4;
+
+  }
+
+}
+
+
+/* Hide SVG definition */
+.flag-svg-filter {
+
+  position: absolute;
+
+  width: 0;
+  height: 0;
+
+  overflow: hidden;
+
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .flag-wrap,
+  .flag-wrap::after {
+
+    animation: none;
+
+  }
+
+
+  .waving-logo {
+
+    filter: none;
+
+  }
+
+}
+/*
 .hero-logo {
   position: relative;
   display: flex;
@@ -254,7 +534,7 @@ main {
     opacity: 0.65;
     transform: translateX(8px);
   }
-}
+} */
 
 /* Blogs */
 .blogs-page {

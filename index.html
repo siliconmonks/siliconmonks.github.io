@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=20260504">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -68,14 +68,85 @@
       Take your time. Explore. Learn with intent.
     </p>
   </section>
+<section class="hero-logo" aria-label="Silicon Monks logo">
 
+  <div class="flag-pole"></div>
+
+  <div class="flag-wrap">
+    <img
+      src="images/silicon-monks-img.png"
+      alt="Silicon Monks logo"
+      class="waving-logo"
+    >
+  </div>
+
+  <!-- SVG filter used for realistic cloth distortion -->
+  <svg class="flag-svg-filter" aria-hidden="true">
+    <defs>
+
+      <filter
+        id="flagWave"
+        x="-10%"
+        y="-10%"
+        width="120%"
+        height="120%"
+      >
+
+        <!-- Creates soft fabric-like waves -->
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.008 0.025"
+          numOctaves="1"
+          seed="3"
+          result="noise"
+        >
+
+          <animate
+            attributeName="baseFrequency"
+            dur="5s"
+            values="
+              0.008 0.025;
+              0.010 0.030;
+              0.008 0.025
+            "
+            repeatCount="indefinite"
+          />
+
+        </feTurbulence>
+
+        <!-- Moves the logo according to the wave -->
+        <feDisplacementMap
+          in="SourceGraphic"
+          in2="noise"
+          scale="7"
+          xChannelSelector="R"
+          yChannelSelector="G"
+        >
+
+          <animate
+            attributeName="scale"
+            dur="4s"
+            values="5;8;5"
+            repeatCount="indefinite"
+          />
+
+        </feDisplacementMap>
+
+      </filter>
+
+    </defs>
+  </svg>
+
+</section>
+
+<!--
   <section class="hero-logo" aria-label="Silicon Monks logo">
     <div class="flag-pole"></div>
 
     <div class="flag-wrap">
       <img src="images/silicon-monks-img.png" alt="Silicon Monks logo" class="waving-logo">
     </div>
-  </section>
+  </section> -->
 </main>
 
 
@@ -107,6 +178,6 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=20260504"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
